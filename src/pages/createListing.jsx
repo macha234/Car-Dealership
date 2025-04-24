@@ -14,6 +14,7 @@ export default function CreateListing() {
     event.preventDefault();
 
     const listingData = {
+      id:Math.random()*999,
       name,
       model,
       colour,

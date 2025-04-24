@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(0, 0, 0);
-    background-image: url("https://hpe-photos.s3.us-east-2.amazonaws.com/wp-content/uploads/2023/12/Hennessey-Venom-F5-Roadster-Summer-Yellow-11.jpg");
+    background-image: url("https://s1.paultan.org/image/2019/11/2020-Audi-R8-V10-RWD-Coupe-5.jpg");
 background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;
@@ -65,13 +65,13 @@ table{
 }
 
 h1{
- color: #333131;
+ color: #ffffff;
 }
 
 .link{
 
   text-decoration: none;
-  color: #333131;
+  color: #ffffff;
 }
 
 .box{

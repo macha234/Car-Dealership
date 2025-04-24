@@ -13,6 +13,7 @@ export default function TransferVehicle() {
     const [selected, setSelected] = useState("")
     const [contact, setContact] = useState("")
     const [vehicle, setVehicle] = useState("")
+   
 
     const handleTransfer = (event) => {
         event.preventDefault()
@@ -22,7 +23,7 @@ export default function TransferVehicle() {
             ownerName: ownerName,
             age: age,
             contact: contact,
-            vehicle: selected
+            // vehicle: selected
         }
 
         const vehicleSold = JSON.parse(localStorage.getItem("sold"))
@@ -36,30 +37,29 @@ export default function TransferVehicle() {
 
             if (Array.isArray(storedVehicles)) {
                 const updatedVehicles = storedVehicles.filter(
-                    (vehicle) => vehicle.name !== selected
+                    (vehicle) => vehicle.id != selected
                 )
 
                 localStorage.setItem("vehicles", JSON.stringify(updatedVehicles))
                 toast.success("vehicle sold from delership")
 
-            } else { 
-                const vehicles = []
-            }
+            } 
         } else {
             const vehicles = []
             vehicles.push(transferData)
 
             localStorage.setItem("sold", JSON.stringify(vehicles))
             toast.success("Vehicle sold successfully")
-
-            const updatedVehicle = vehicles.filter(
-                (vehicle) => vehicle.name !== selected
+const existingVehicles= JSON.parse(localStorage.getItem("vehicles")) 
+            const updatedVehicle = existingVehicles.filter(
+                (vehicle) => vehicle.id != selected
             )
 
             localStorage.setItem("vehicles", JSON.stringify(updatedVehicle))
             toast.success("vehicle sold from dealership")
         }
     }
+    console.log(selected)
 
     return (
         <div className="form">
@@ -87,7 +87,7 @@ export default function TransferVehicle() {
                 {selection.map((selection) => (
                     <>
                         <option value=""></option>
-                        <option value={selection.name}>{selection.name}</option>
+                        <option value={selection.id}>{selection.name}</option>
                     </>
                 ))}
                 </select>
