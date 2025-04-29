@@ -1,6 +1,7 @@
 import ListVehicles from "./components/ListVehicles"
 import { Link } from "react-router"
-
+import Customer from "./components/customer"
+import Jokes from "./components/jokes"
 function App() {
   
 
@@ -26,7 +27,13 @@ function App() {
       Display sold vehicles
     </button>
     </Link>
+
+
+
     </div>
+
+    <Customer/>
+    <Jokes/>
     </>
   )
 }
